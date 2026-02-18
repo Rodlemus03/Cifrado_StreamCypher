@@ -1,3 +1,9 @@
+'''
+Conversacion con chatGpt 
+
+https://chatgpt.com/share/69950c29-45d4-8006-b035-5b9e392d6b17
+'''
+
 import base64
 
 def _key_to_seed(key):
@@ -116,3 +122,18 @@ if __name__ == "__main__":
     print("c1(hex):", to_hex(c1))
     print("c2(hex):", to_hex(c2))
     print("c1_xor_c2(hex):", to_hex(reused_keystream_attack(c1, c2)))
+    
+    
+'''
+Reflexion tecnica 
+
+En este laboratorio pude comprender de forma práctica cómo funciona un stream cipher basado en XOR 
+y la importancia crítica del keystream en la seguridad del sistema. Aunque el algoritmo implementado
+cumple correctamente con el cifrado y descifrado, también evidencia que la reutilización del mismo 
+keystream con una misma clave puede generar vulnerabilidades graves, ya que permite relacionar 
+directamente mensajes cifrados.
+
+Esto demuestra que en aplicaciones reales no basta con que el 
+cifrado “funcione”, sino que deben considerarse aspectos como la generación criptográficamente 
+segura del flujo, el uso de nonces y la autenticación de los datos.
+'''
